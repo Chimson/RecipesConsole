@@ -1,0 +1,87 @@
+Recipes
+     main.cpp:
+          Read File into roster    x
+          Entering Recipes
+               Enter Recipe   x
+               Store it in roster (if valid) x   
+          Look at all current recipes in storage x
+          User option to search within recipes storage by  one ingredient x
+               Display search results   x (case sensitive)
+          Write roster to file     x
+          Search with multiple ingredients and display results by least matches x
+               to the most matches x
+         /=========
+		 do not add recipe if ingredients list is empty
+         alphabetize display all recipes
+         add words searched after search results are displayed
+         const and & correctness
+         Do not accept a search of " " ingredient
+          Modify an existing recipe
+               delete a recipe
+               change attributes
+          Pick out multiple recipes, display total needed ingredients
+          graphics?
+          /========
+
+Recipes Structure
+     Class Ingredient (one at a time)
+          string "quantity name"
+     Class Ingredients_List
+          vector of Ingredient objs
+     Class Recipe (one at a time)
+          string title
+          Class Ingredients_List
+          string directions
+          found parameter
+     Class Recipes
+          vector of Recipe objs
+Recipes is allocated on heap (using pointers)
+all classes attributes start with no data, all default constructors except for Recipe     
+     Recipe has a a defaulted "found = 0" parameter
+gets and sets, if they're simple, in class defn.h
+all default destructors 
+one Recipes obj will be allocated on the heap by a pointer
+getline(stream, var); reads entered data skipping whitespace
+cin.ignore() after using >>
+deal with arrow key error when entering in recipes in console
+need to add option to quit any menu entry at any time without saving or writing
+fix ****** and spaces
+search is case sensitve, make it case insensitive
+
+Coding Techniques
+     Make it readable, do not vectorize   
+     use & or pointers to access objects/vars directly in functions
+     use one .h/.cpp file? (other than main.cpp)
+     Allocate memory from heap?  if so then need pointers          
+     .h
+          placed non-class function prototypes in .h 
+          prototypes to class methods
+     .cpp     
+          non-class functions in .cpp
+          class methods defined outside class
+     use OOP
+          public methods can access private attributes of an obj directly, same with "friends"  
+          use c++ destructor
+          use defaulted constructor that can be no args up to as many as you have
+               no need for overloaded constructors
+               copy constructor? can use c++ that copies every attribute
+                    would need deep copy/ move constructor if using pointers
+          get and set public methods? 
+               all getters should be const
+          use static methods/attributes that belongs to whole class
+               initialize in .cpp
+               if static member is private, need a public method to access
+               for counting total objects, use a static counter incremented to one constructor, may need delegation
+                    decremented in destructor
+                    also increments in pointers
+     Use const and & correctly  
+          const methods that do not change attribute or const objs
+          const unchangeable objs      
+          outside class functions have const args when not changing objs   
+               must need a const method or won't compile 
+      Outside class's function can transfer to a Class method and then to another Class's method     
+
+
+                    
+
+
